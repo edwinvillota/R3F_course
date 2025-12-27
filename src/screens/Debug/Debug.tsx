@@ -1,0 +1,65 @@
+import { Grid, Stats, useHelper } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber';
+import { Leva, useControls } from 'leva';
+import { useRef } from 'react';
+import * as THREE from 'three';
+
+const Box = () => {
+	const ref = useRef(null);
+
+	useHelper(ref as any, THREE.BoxHelper, 'red');
+
+	const { position, color, opacity, tranparent } = useControls({
+		position: {
+			x: 0,
+			y: 0,
+			z: 0,
+		},
+		color: '#ff0000',
+		opacity: {
+			value: 0.5,
+			min: 0,
+			max: 1,
+			step: 0.01,
+		},
+		tranparent: true,
+	});
+
+	return (
+		<mesh ref={ref} position={[position.x, position.y, position.z]}>
+			<boxGeometry />
+
+			<meshBasicMaterial
+				color={color}
+				transparent={tranparent}
+				opacity={opacity}
+			/>
+		</mesh>
+	);
+};
+
+const Debug = () => {
+	return (
+		<>
+			<Leva hidden={false} />
+			<Stats />
+			<Canvas camera={{ position: [3, 3, 3] }}>
+				<axesHelper />
+				<Grid
+					sectionSize={3}
+					sectionColor={'purple'}
+					sectionThickness={1}
+					cellSize={1}
+					cellColor={'#6f6f6f'}
+					cellThickness={0.6}
+					infiniteGrid
+					fadeDistance={50}
+					fadeStrength={5}
+				/>
+				<Box />
+			</Canvas>
+		</>
+	);
+};
+
+export default Debug;
