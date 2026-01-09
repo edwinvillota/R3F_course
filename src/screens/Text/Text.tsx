@@ -1,10 +1,16 @@
-import { Text } from '@react-three/drei';
+import { Environment, OrbitControls, Sky } from '@react-three/drei';
 import { Canvas } from '@react-three/fiber';
+import { Experience } from './components/Experience';
 
 const TextScreen = () => {
 	return (
-		<Canvas>
-			<Text>Text</Text>
+		<Canvas camera={{ position: [0, 2, 12], fov: 42 }}>
+			<group position-y={-1.5}>
+				<Experience />
+			</group>
+			<OrbitControls />
+			<Environment preset="sunset" />
+			<Sky />
 		</Canvas>
 	);
 };

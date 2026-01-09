@@ -7,9 +7,11 @@ import Debug from '../screens/Debug/Debug';
 import Events from '../screens/Events/Events';
 import HTML from '../screens/HTML/HTML';
 import Lights from '../screens/Lights/Lights';
+import Loading from '../screens/Loading/Loading';
 import Models from '../screens/Models/Models';
 import Objects from '../screens/Objects/Objects';
 import R3FHooks from '../screens/R3FHooks/R3FHooks';
+import Scroll from '../screens/Scroll/Scroll';
 import Shadows from '../screens/Shadows/Shadows';
 import Text from '../screens/Text/Text';
 import Textures from '../screens/Textures/Textures';
@@ -36,6 +38,8 @@ const Router = () => {
 					<Route path="textures" element={<Textures />} />
 					<Route path="html" element={<HTML />} />
 					<Route path="text" element={<Text />} />
+					<Route path="loading" element={<Loading />} />
+					<Route path="scroll" element={<Scroll />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -99,6 +99,16 @@ const sections: Section[] = [
 				to: '/core/text',
 				className: 'text-blue-200 hover:underline',
 			},
+			{
+				title: 'Loading screen',
+				to: '/core/loading',
+				className: 'text-blue-200 hover:underline',
+			},
+			{
+				title: 'Scroll',
+				to: '/core/scroll',
+				className: 'text-blue-200 hover:underline',
+			},
 		],
 	},
 	{
